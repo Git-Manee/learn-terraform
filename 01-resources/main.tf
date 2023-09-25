@@ -6,3 +6,11 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+
+resource "aws_route53_record" "www" {
+  zone_id = "Z06195201DS9N630KC87K"
+  name    = "test.mkdevops.online"
+  type    = "A"
+  ttl     = 30
+  records = [ aws_instance.web.private_ip ] #need to provide the ip address
+}
