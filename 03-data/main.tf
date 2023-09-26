@@ -8,3 +8,8 @@ data "aws_security_group" "sg" {
   name = "allow-all"
 }
 
+data "aws_route53_zone" "zone" {
+  name         = "mkdevops.online"
+  private_zone = true
+}
+

@@ -7,3 +7,10 @@ data "aws_ami" "ami" {
 data "aws_security_group" "sg" {
   name = "allow-all"
 }
+
+data "aws_route53_zone" "zone" {
+  name         = "var.zone_id"
+}
+variable "zone_id" {
+  default = "mkdevops.online"
+}
